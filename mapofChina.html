@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<!-- static -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/logic/mapchina.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="js/china.js"></script>
+		<script src="json/china-main-city-map.js"></script>
+		<link rel="stylesheet" href="fonts/glyphicons-halflings-regular.svg">
+		<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+		<title>人员分布图</title>
+		<style>
+			.goback,
+			 .goback1{
+			 	line-height: 34px;
+			 	background: seagreen;
+			 	text-align: center;
+			 	border-radius: 4px;
+			 	display: inline-block;
+			 	padding: 0 12px;
+			 	box-sizing: border-box;
+			 	cursor: pointer;
+			 	position: fixed;
+			 	top: 55px;
+			 	left: 10%;
+			 	color: #fff;
+			 	font-size: 14px;
+			 	display: none;
+			 }
+			 .goback:hover,
+			 .goback1:hover {
+			 	background: rgba(13, 13, 171, 0.9);
+			 }
+			#dt {
+				width: 60%;
+				min-height: 900px;
+				position: fixed;
+				left: 20.5%;
+				top: 10px;
+				padding: 0;
+				margin: 0;
+				min-width:100px ;
+			}
+		</style>
+	</head>
+
+	<body style="background: #fff;">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-1 col-sm-offset-3 col-md-12 col-md-offset-0 main" style="top:30px;min-height: 900px;">
+					<!--echarts图表-->
+					<div id="map-Statistics2"></div>
+					<div>
+						<div class="add101" style="width: 100%;height: 200px;display: none;"></div>
+						<div id="dt"></div>
+						<div class="goback">后退一级</div>
+						<div class="goback1">后退一级</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				$(".nav-child1").hide()
+				$('.Navigation>li').on('click', function() {
+					$(this).addClass('active').siblings().removeClass('active')
+					$("active").css('color', '#000').siblings().css('color', '#fff');
+				})
+				$('.addclass').on('click', function() {
+					$('.add2').toggle();
+					$(".nav-child").toggle();
+					$('.add1').toggle();
+					$(this).removeClass('active')
+				})
+				$('.addclass1').on('click', function() {
+					$('.add3').toggle();
+					$('.add4').toggle();
+					$(".nav-child1").toggle();
+					$(this).removeClass('active');
+				})
+				
+
+				
+				
+		
+			})
+		</script>
+
+	</body>
+
+</html>
